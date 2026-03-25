@@ -11,12 +11,10 @@ import DragOverlay from "./components/DragOverlay";
 function App() {
   const setTasks = useTaskStore((s) => s.setTasks);
   const [view, setView] = useState<"kanban" | "list" | "timeline">("kanban");
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setTasks(generateTasks(500));
-      setLoading(false);
     }, 0);
   }, []);
 

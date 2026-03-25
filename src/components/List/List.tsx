@@ -7,10 +7,20 @@ const ROW_HEIGHT = 60;
 const CONTAINER_HEIGHT = 500;
 const BUFFER = 5;
 
+type Priority = "low" | "medium" | "high" | "critical";
+
+interface Task {
+  id: string;
+  title: string;
+  priority: Priority;
+  dueDate: string;
+  status: "todo" | "inprogress" | "review" | "done";
+}
+
 export default function List() {
   const [params] = useSearchParams();
-  const originalTasks = useTaskStore((s) => s.tasks);
-  const filteredTasks = filterTasks(originalTasks, params);
+  const originalTasks: Task[] = useTaskStore((s) => s.tasks);
+  const filteredTasks: Task[] = filterTasks(originalTasks, params);
   const updateTask = useTaskStore((s) => s.updateTask);
 
   const [scrollTop, setScrollTop] = useState(0);
@@ -28,14 +38,6 @@ export default function List() {
     medium: 2,
     low: 1,
   };
-
-  type Priority = "low" | "medium" | "high" | "critical";
-
-  interface Task {
-    title: string;
-    priority: Priority;
-    dueDate: string;
-  }
 
   const sortedTasks = useMemo(() => {
     return [...filteredTasks].sort((a, b) => {
