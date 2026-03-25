@@ -24,9 +24,17 @@ export default function TaskCard({
   const diffDays = Math.floor(
     (today.getTime() - due.getTime()) / (1000 * 60 * 60 * 24)
   );
+  
+  let ticking = false;
 
   const handlePointerMove = (e: PointerEvent) => {
-    setDragPosition({ x: e.clientX, y: e.clientY });
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        setDragPosition({ x: e.clientX, y: e.clientY });
+        ticking = false;
+      });
+      ticking = true;
+    }
   };
 
   const updateTask = useTaskStore((s) => s.updateTask);

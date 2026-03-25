@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useTaskStore } from "../../store/useTaskStore";
 import { useSearchParams } from "react-router-dom";
 import { filterTasks } from "../../utils/filterTasks";
@@ -37,25 +37,23 @@ export default function List() {
     dueDate: string;
   }
 
-  const sortedTasks = [...filteredTasks].sort((a: Task, b: Task) => {
-    let result = 0;
+  const sortedTasks = useMemo(() => {
+    return [...filteredTasks].sort((a, b) => {
+      let result = 0;
 
-    if (sortKey === "title") {
-      result = a.title.localeCompare(b.title, undefined, {
-        numeric: true,
-        sensitivity: "base",
-      });
-    } else if (sortKey === "priority") {
-      result =
-        priorityOrder[b.priority] - priorityOrder[a.priority];
-    } else if (sortKey === "dueDate") {
-      result =
-        new Date(a.dueDate).getTime() -
-        new Date(b.dueDate).getTime();
-    }
+      if (sortKey === "title") {
+        result = a.title.localeCompare(b.title);
+      } else if (sortKey === "priority") {
+        result = priorityOrder[b.priority] - priorityOrder[a.priority];
+      } else {
+        result =
+          new Date(a.dueDate).getTime() -
+          new Date(b.dueDate).getTime();
+      }
 
-    return sortOrder === "asc" ? result : -result;
-  });
+      return sortOrder === "asc" ? result : -result;
+    });
+  }, [filteredTasks, sortKey, sortOrder]);
 
   const totalHeight = sortedTasks.length * ROW_HEIGHT;
 

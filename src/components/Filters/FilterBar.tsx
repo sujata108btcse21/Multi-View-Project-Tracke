@@ -1,17 +1,18 @@
+import { useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import MultiSelect from "./MultiSelect";
 
 export default function FilterBar() {
   const [params, setParams] = useSearchParams();
 
-  const updateParam = (key: string, value: string) => {
+  const updateParam = useCallback((key: string, value: string) => {
     const newParams = new URLSearchParams(params.toString());
 
     if (value) newParams.set(key, value);
     else newParams.delete(key);
 
     setParams(newParams);
-  };
+  }, [params, setParams]);
 
   const clearFilters = () => setParams({});
 

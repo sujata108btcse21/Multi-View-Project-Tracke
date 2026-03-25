@@ -7,12 +7,17 @@ import Timeline from "./components/Timeline/Timeline";
 import FilterBar from "./components/Filters/FilterBar";
 import DragOverlay from "./components/DragOverlay";
 
+
 function App() {
   const setTasks = useTaskStore((s) => s.setTasks);
   const [view, setView] = useState<"kanban" | "list" | "timeline">("kanban");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTasks(generateTasks(500));
+    setTimeout(() => {
+      setTasks(generateTasks(500));
+      setLoading(false);
+    }, 0);
   }, []);
 
   useEffect(() => {

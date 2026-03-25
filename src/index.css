@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-* {
-  transition-property: transform, opacity, box-shadow;
+.card {
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
 }
