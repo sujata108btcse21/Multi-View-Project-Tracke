@@ -89,6 +89,16 @@ Implemented using native Pointer Events:
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192630" src="https://github.com/user-attachments/assets/cce1a404-499e-4af1-9a07-9a608f0a76da" />
 
 
+# LightHouse Performance 
+Desktop
+
+<img width="2560" height="1600" alt="Screenshot 2026-03-25 195937" src="https://github.com/user-attachments/assets/5bc59790-d33f-4614-8b6e-4401791bb445" />
+
+Mobile
+
+<img width="2560" height="1600" alt="Screenshot 2026-03-25 195910" src="https://github.com/user-attachments/assets/4af41b0f-4e0b-48ac-a7d9-35567d580319" />
+
+
 ## Explaination
 
 The most challenging part of this project was implementing a custom drag-and-drop system without using any external libraries. Handling pointer events manually required careful coordination between pointerdown, pointermove, and pointerup events, while ensuring compatibility across both mouse and touch devices. One key challenge was detecting valid drop zones, which was solved using document.elementFromPoint combined with data attributes on columns.
