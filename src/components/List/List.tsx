@@ -29,7 +29,15 @@ export default function List() {
     low: 1,
   };
 
-  const sortedTasks = [...filteredTasks].sort((a, b) => {
+  type Priority = "low" | "medium" | "high" | "critical";
+
+  interface Task {
+    title: string;
+    priority: Priority;
+    dueDate: string;
+  }
+
+  const sortedTasks = [...filteredTasks].sort((a: Task, b: Task) => {
     let result = 0;
 
     if (sortKey === "title") {
