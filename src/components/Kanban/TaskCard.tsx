@@ -4,7 +4,6 @@ import { useTaskStore } from "../../store/useTaskStore";
 
 interface Props {
   task: any;
-  setDraggingId: (id: string | null) => void;
 }
 
 export default function TaskCard({

@@ -19,7 +19,10 @@ export default function List() {
   >("title");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
 
-  const priorityOrder = {
+  const priorityOrder: Record<
+    "critical" | "high" | "medium" | "low",
+    number
+  > = {
     critical: 4,
     high: 3,
     medium: 2,

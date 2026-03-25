@@ -28,8 +28,6 @@ function App() {
       const tasks = useTaskStore.getState().tasks;
       if (!tasks.length) return;
 
-      const prev = useTaskStore.getState().presence;
-
       const next = users.map((u, i) => {
         const randomTask =
           tasks[Math.floor(Math.random() * tasks.length)];
