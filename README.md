@@ -44,30 +44,47 @@ Implemented using native Pointer Events:
 
 ## Lighthouse
 
+# Kanban View
 
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192250" src="https://github.com/user-attachments/assets/71ee0a00-18d3-472c-93f9-c51871c40165" />
 
 
+# List View
+
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192305" src="https://github.com/user-attachments/assets/a2495993-a035-4e9d-bc7c-58eb0add3f69" />
 
+
+# Timeline View
 
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192320" src="https://github.com/user-attachments/assets/c4d4b85f-04bb-4198-a636-e86d6cf6b6aa" />
 
 
+# Search Filter
+
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192350" src="https://github.com/user-attachments/assets/c7c5f144-55ab-4f8c-a100-714f9c59911a" />
 
+
+# Status, Priority, Assignee filter
 
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192429" src="https://github.com/user-attachments/assets/8bb50727-0c93-4307-8a83-dc800baaefe8" />
 
 
+# Due Date filter
+
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192531" src="https://github.com/user-attachments/assets/54b3a9b8-d823-4e57-918f-0af370da340f" />
 
+
+# List View Status filter
 
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192547" src="https://github.com/user-attachments/assets/2768f80b-ad1b-4acc-89ac-86a799a6848c" />
 
 
+# Timeline View Filters
+
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192612" src="https://github.com/user-attachments/assets/9de3d89e-030d-42ad-90dc-84bd6ee0428c" />
 
+
+# Drag and Drop 
 
 <img width="2560" height="1600" alt="Screenshot 2026-03-25 192630" src="https://github.com/user-attachments/assets/cce1a404-499e-4af1-9a07-9a608f0a76da" />
 
